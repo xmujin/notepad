@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "notepad",
+	"version": "${version}",
+	"name": "notepad",
+	"description": "This mod is used to record something, such as your todo list, position and so on, and you needn't open notepad on Windows or written on paper",
+	"authors": [
+		"x2un"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/notepad/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"main": [
+			"com.x2un.notepad.Notepad"
+		],
+		"client": [
+			"com.x2un.notepad.client.NotepadClient"
+		]
+	},
+	"mixins": [
+		"notepad.mixins.json",
+		{
+			"config": "notepad.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
