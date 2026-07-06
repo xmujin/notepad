@@ -19,6 +19,7 @@ public class NotepadClient implements ClientModInitializer {
 				Identifier.fromNamespaceAndPath(MOD_ID, "custom_ssssdfdaaa")
 		);
 
+		// 开启按键映射
 		KeyMapping sendToChatKey = KeyMappingHelper.registerKeyMapping(
 				new KeyMapping(
 						"key.example-mod.send_to_chat", // The translation key for the key mapping.
@@ -30,7 +31,7 @@ public class NotepadClient implements ClientModInitializer {
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			while (sendToChatKey.consumeClick()) {
 				if (client.player != null) {
-					client.gui.setScreen(new CustomScreen(Component.empty()));
+					client.gui.setScreen(new HomeScreen(Component.empty()));
 
 				}
 			}
