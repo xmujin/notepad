@@ -31,8 +31,8 @@ public class MyButton extends AbstractButton {
     // 重写该方法用于自定义绘制按钮
     @Override
     protected void extractContents(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float delta) {
-        int color = 0xFF606060; // 灰色
-        if (isHovered()) {
+        int color = isActive() ? 0xFF606060 : 0x80404040; // 灰色
+        if (isHovered() && isActive()) {
             color = 0xFF404040;
         }
         graphics.fill(getX(), getY(), getX() + this.width, getY() + this.height, color);
